@@ -1,8 +1,8 @@
 module "trip-dynamodb" {
   source = "./dynamodb/trip"
-#   environment = "dev"
+  environment = var.environment
 }
 module "organization-dynamodb" {
   source = "./dynamodb/organization"
-#   environment = "dev"
+  environment = var.environment
 }
