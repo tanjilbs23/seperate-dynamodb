@@ -5,5 +5,6 @@ module "organization-dynamodb" {
   source = "./dynamodb/organization"
 }
 variable "environment" {
-  type        = string
+  type    = string
+  default = "sharebus"
 }
