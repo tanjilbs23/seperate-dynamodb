@@ -14,6 +14,6 @@ module "dynamodb-table" {
 
   tags = {
     Terraform   = "true"
-    Environment = "dev"
+    Environment = var.environment
   }
 }
