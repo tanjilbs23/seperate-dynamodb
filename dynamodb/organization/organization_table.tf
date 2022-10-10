@@ -1,4 +1,4 @@
-module "dynamodb-table" {
+module "dynamodb_table" {
   source  = "terraform-aws-modules/dynamodb-table/aws"
 
   name     = "organization_table"
@@ -54,7 +54,7 @@ resource "aws_iam_role_policy" "example" {
       ],
       "Effect": "Allow",
       "Resource": [
-        "${aws_dynamodb_table.example.arn}"
+        "${module.dynamodb_table.dynamodb_table_arn}"
       ]
     }
   ]
@@ -71,6 +71,6 @@ resource "aws_appsync_datasource" "example" {
   type             = "AMAZON_DYNAMODB"
 
   dynamodb_config {
-    table_name = module.dynamodb-table.dynamodb_table_id
+    table_name = module.dynamodb_table.dynamodb_table_id
   }
 }
