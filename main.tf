@@ -9,5 +9,4 @@ module "organization-dynamodb" {
 
 module "appsync" {
   source      = "./graphql-api"
-  environment = "dev"
 }
