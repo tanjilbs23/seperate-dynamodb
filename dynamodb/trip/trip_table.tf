@@ -1,4 +1,4 @@
-module "dynamodb-table" {
+module "dynamodb_table" {
   source  = "terraform-aws-modules/dynamodb-table/aws"
 
   name     = "trip_table"
@@ -60,19 +60,24 @@ resource "aws_iam_role_policy" "example" {
   ]
 }
 EOF
+
+depends_on = [
+  module.dynamodb_table
+]
+
 }
 
 # 
 
-resource "aws_appsync_datasource" "example" {
-  api_id           = "a53izjzw3bhidmnnaoqqqjwn54"
-  name             = module.dynamodb_table.dynamodb_table_id
-  service_role_arn = aws_iam_role.example.arn
-  type             = "AMAZON_DYNAMODB"
+# resource "aws_appsync_datasource" "example" {
+#   api_id           = "a53izjzw3bhidmnnaoqqqjwn54"
+#   name             = module.dynamodb_table.dynamodb_table_id
+#   service_role_arn = aws_iam_role.example.arn
+#   type             = "AMAZON_DYNAMODB"
 
-  dynamodb_config {
-    table_name = module.dynamodb_table.dynamodb_table_id
-  }
+#   dynamodb_config {
+#     table_name = module.dynamodb_table.dynamodb_table_id
+#   }
 
   
-}
+# }
