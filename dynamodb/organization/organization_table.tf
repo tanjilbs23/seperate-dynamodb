@@ -22,7 +22,7 @@ module "dynamodb_table" {
 
 
 resource "aws_iam_role" "example" {
-  name = "example"
+  name = "example-organization"
 
   assume_role_policy = <<EOF
 {
@@ -41,7 +41,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "example" {
-  name = "example"
+  name = "example-organization"
   role = aws_iam_role.example.id
 
   policy = <<EOF
