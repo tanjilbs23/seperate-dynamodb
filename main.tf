@@ -6,3 +6,8 @@ module "organization-dynamodb" {
   source      = "./dynamodb/organization"
   environment = "dev"
 }
+
+module "appsync" {
+  source      = "./graphql-api"
+  environment = "dev"
+}
