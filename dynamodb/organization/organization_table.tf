@@ -67,17 +67,17 @@ depends_on = [
 
 }
 
-# # 
+# 
 
-# resource "aws_appsync_datasource" "example" {
-#   api_id           = "a53izjzw3bhidmnnaoqqqjwn54"
-#   name             = module.dynamodb_table.dynamodb_table_id
-#   service_role_arn = aws_iam_role.example.arn
-#   type             = "AMAZON_DYNAMODB"
+resource "aws_appsync_datasource" "example" {
+  api_id           = "3gu5l23q4vespouyky7m527gqu"
+  name             = module.dynamodb_table.dynamodb_table_id
+  service_role_arn = aws_iam_role.example.arn
+  type             = "AMAZON_DYNAMODB"
 
-#   dynamodb_config {
-#     table_name = module.dynamodb_table.dynamodb_table_id
-#   }
+  dynamodb_config {
+    table_name = module.dynamodb_table.dynamodb_table_id
+  }
 
   
-# }
+}
